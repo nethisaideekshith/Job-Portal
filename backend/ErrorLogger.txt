@@ -1,0 +1,13 @@
+Wed Jul 09 2025 17:25:13 GMT+0530 (India Standard Time) : Error: Invalid Password
+    at employeeModel.checkUser (C:\Users\DELL\OneDrive\Desktop\Internal job portal\backend\model\employeeModel.js:18:13)
+    at async employeeServices.login (C:\Users\DELL\OneDrive\Desktop\Internal job portal\backend\services\employeeServices.js:12:14)
+    at async C:\Users\DELL\OneDrive\Desktop\Internal job portal\backend\routes\router.js:9:26
+Wed Jul 09 2025 17:27:42 GMT+0530 (India Standard Time) : Error: Invalid Password
+    at employeeModel.checkUser (C:\Users\DELL\OneDrive\Desktop\Internal job portal\backend\model\employeeModel.js:22:19)
+    at async employeeServices.login (C:\Users\DELL\OneDrive\Desktop\Internal job portal\backend\services\employeeServices.js:12:14)
+    at async C:\Users\DELL\OneDrive\Desktop\Internal job portal\backend\routes\router.js:9:26
+Wed Jul 09 2025 17:28:02 GMT+0530 (India Standard Time) : Error: Employee not found
+    at employeeModel.checkUser (C:\Users\DELL\OneDrive\Desktop\Internal job portal\backend\model\employeeModel.js:13:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async employeeServices.login (C:\Users\DELL\OneDrive\Desktop\Internal job portal\backend\services\employeeServices.js:12:14)
+    at async C:\Users\DELL\OneDrive\Desktop\Internal job portal\backend\routes\router.js:9:26
