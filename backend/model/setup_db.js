@@ -8,26 +8,38 @@ const empData = async () => {
 
   return [
     {
-      empId: 1001,
-      name: "Mahika Dawar",
-      email: "mahikadawar@gmail.com",
-      password: await hash("Mahika@123"),
-      role: "admin"
-    },
+    empId: "1001",
+    name: "Mahika Dawar",
+    email: "mahikadawar@gmail.com",
+    password: await hash("Mahika@123"),
+    role: "admin",
+    gender: "Female",
+    address: "Mussoorie-Diversion Road, Village Makkawala, Dehradun",
+    location: "Hyderabad"
+  },
     {
-      empId: 1002,
-      name: "Nethi Sai Deekshith",
-      email: "nethisaideekshith@gmail.com",
-      password: await hash("Deekshith@123"),
-      role: "hr"
-    },
+    empId: "1002",
+    name: "Nethi Sai Deekshith",
+    email: "nethisaideekshith@gmail.com",
+    password: await hash("Deekshith@123"),
+    role: "hr",
+    gender: "Male",
+    address: "456 HR Avenue, Hyderabad",
+    location: "Hyderabad"
+  },
     {
-      empId: 1003,
-      name: "Himanshi Sharma",
-      email: "himanshisharma@gmail.com",
-      password: await hash("Himanshi@123"),
-      role: "employee"
-    }
+    empId: "1003",
+    name: "Himanshi Sharma",
+    email: "himanshisharma@gmail.com",
+    password: await hash("Himanshi@123"),
+    role: "employee",
+    gender: "Female",
+    address: "789 Employee Road, Mumbai",
+    location: "Mumbai",
+    skills: ["JavaScript", "Angular", "Node.js"],
+    currentProject: true,
+    experience: 3
+  }
   ];
 };
 

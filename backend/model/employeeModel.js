@@ -4,7 +4,7 @@ const employeeModel = {}
 
 //Employee Login
 
-employeeModel.checkUser = async (email, password, role) => {
+employeeModel.checkEmployee = async (email, password, role) => {
   try {
     const employees = await connection.getEmployees();
     const employee1 = await employees.findOne({ email: email, role: role });
@@ -26,9 +26,6 @@ employeeModel.checkUser = async (email, password, role) => {
 
     return employee1;
   } catch (err) {
-    if (!err.status) {
-      err.status = 500;
-    }
     throw err;
   }
 };

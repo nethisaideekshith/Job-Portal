@@ -9,7 +9,7 @@ employeeServices.login=async(email,password,role)=>{
         validators.validateEmail(email);
         validators.validatePassword(password);
         validators.validateRole(role);
-        user=await employeeModel.checkUser(email,password,role);
+        user=await employeeModel.checkEmployee(email,password,role);
         return user;
     }
     catch(error){

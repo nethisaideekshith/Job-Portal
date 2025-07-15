@@ -2,12 +2,13 @@ const mongoose = require('mongoose')
 const bcrypt=require('bcrypt');
 require("dotenv").config(); 
 
-// User Employee Creation
+//Employee Schema
 
 const employeeSchema = mongoose.Schema({
     empId:{
       type:String,
-      required:true
+      required:true,
+      unique:true
     },  
     name:{
         type:String,
@@ -26,8 +27,27 @@ const employeeSchema = mongoose.Schema({
         type:String,
         require:true,
         enum: ['employee', 'hr', 'admin']
+    },
+    gender:{
+      type:String,
+      required:true,
+      enum: ['Male','Female']
+    },
+    address:{
+      type:String
+    },
+    location:{
+      type:String
+    },
+    skills:{
+      type:[String]
+    },
+    currentProject:{
+      type:Boolean
+    },
+    experience:{
+      type:Number
     }
-      
 })
 
 //password hashing
