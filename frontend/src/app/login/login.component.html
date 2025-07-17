@@ -1,0 +1,41 @@
+<!-- <div class="login-container">
+    <h2>My Form</h2>
+    <div class="button-container">
+        <button class="btn btn-primary" (click)="showForm=true" [disabled]="hasform">create</button><br>
+        <button class="btn btn-primary" *ngIf="hasform" (click)="toggleform()">Update</button>
+    </div>
+</div> -->
+<div class="form-overlay">
+<div class="card col-md-4 col-sm-9">
+    <div class="card-body">
+    <h1 class="text-center">Login</h1>
+    <form [formGroup]="loginform" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            
+           <label for="em" class="form-label">Email</label>
+           <div class="error-message"
+            *ngIf="loginform.controls['Email'].invalid && loginform.controls['Email'].dirty">
+            <span *ngIf="loginform.controls['Email'].errors?.['required']">Field Required</span>
+            <span *ngIf="loginform.controls['Email'].errors?.['check']">Invalid Email</span>
+           </div>
+           <input type="text" class="form-control" formControlName="Email" id="em">
+           
+        </div>
+         <div class="form-group">
+            
+           <label for="pass" class="form-label">Password</label>
+           <div class="error-message"
+            *ngIf="loginform.controls['Password'].invalid && loginform.controls['Password'].dirty">
+            <span *ngIf="loginform.controls['Password'].errors?.['required']">Field Required</span>
+            <span *ngIf="loginform.controls['Password'].errors?.['pattern']">Invalid password</span>
+           </div>
+           <input type="password" class="form-control" formControlName="Password" id="pass">
+           
+        </div>
+         <div class="form-group">
+           <button type="submit" class="btn btn-primary" [disabled]="loginform.invalid">Login</button>
+        </div>
+    </form>
+    </div>
+</div>
+</div>
