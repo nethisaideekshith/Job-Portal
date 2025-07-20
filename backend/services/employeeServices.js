@@ -6,6 +6,7 @@ const employeeServices={};
 
 employeeServices.login=async(email,password,role)=>{
     try{
+        // console.log("Inside login service");
         validators.validateEmail(email);
         validators.validatePassword(password);
         validators.validateRole(role);

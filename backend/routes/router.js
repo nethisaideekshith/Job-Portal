@@ -7,6 +7,7 @@ const router = express.Router();
 
 router.post('/login', async (req, res, next) => {
     try {
+        // console.log("Inside login router")
         const employee = await employeeServices.login(req.body.email, req.body.password,req.body.role);
         res.status(200).json(employee);
     }

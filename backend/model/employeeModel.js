@@ -6,6 +6,7 @@ const employeeModel = {}
 
 employeeModel.checkEmployee = async (email, password, role) => {
   try {
+    // console.log("Inside Login model")
     const employees = await connection.getEmployees();
     const employee1 = await employees.findOne({ email: email, role: role });
 

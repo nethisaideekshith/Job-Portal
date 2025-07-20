@@ -6,36 +6,55 @@
     </div>
 </div> -->
 <div class="form-overlay">
-<div class="card col-md-4 col-sm-9">
-    <div class="card-body">
-    <h1 class="text-center">Login</h1>
-    <form [formGroup]="loginform" (ngSubmit)="onSubmit()">
-        <div class="form-group">
-            
-           <label for="em" class="form-label">Email</label>
-           <div class="error-message"
-            *ngIf="loginform.controls['Email'].invalid && loginform.controls['Email'].dirty">
-            <span *ngIf="loginform.controls['Email'].errors?.['required']">Field Required</span>
-            <span *ngIf="loginform.controls['Email'].errors?.['check']">Invalid Email</span>
-           </div>
-           <input type="text" class="form-control" formControlName="Email" id="em">
-           
+    <div class="card col-md-4 col-sm-9">
+        <div class="card-body">
+            <h1 class="text-center">Login</h1>
+            <form [formGroup]="loginform" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+
+                    <label for="em" class="form-label">Email</label>
+                    <div class="error-message"
+                        *ngIf="loginform.controls['email'].invalid && loginform.controls['email'].dirty">
+                        <span *ngIf="loginform.controls['email'].errors?.['required']">Field Required</span>
+                        <span *ngIf="loginform.controls['email'].errors?.['check']">Invalid Email</span>
+                    </div>
+                    <input type="text" class="form-control" formControlName="email" id="em">
+
+                </div>
+                <div class="form-group">
+
+                    <label for="pass" class="form-label">Password</label>
+                    <div class="error-message"
+                        *ngIf="loginform.controls['password'].invalid && loginform.controls['password'].dirty">
+                        <span *ngIf="loginform.controls['password'].errors?.['required']">Field Required</span>
+                        <span *ngIf="loginform.controls['password'].errors?.['pattern']">Invalid password</span>
+                    </div>
+                    <input type="password" class="form-control" formControlName="password" id="pass">
+
+                </div>
+
+                <div class="form-group">
+                    <label for="role" class="form-label">Role</label>
+                    <div class="error-message"
+                        *ngIf="loginform.controls['role'].invalid && loginform.controls['role'].dirty">
+                        <span *ngIf="loginform.controls['role'].errors?.['required']">Field Required</span>
+                    </div>
+                    <select class="form-control" formControlName="role" id="role">
+                        <option value="" disabled selected>Select Role</option>
+                        <option value="admin">Admin</option>
+                        <option value="hr">HR</option>
+                        <option value="employee">Employee</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary" [disabled]="loginform.invalid">Login</button>
+                </div>
+                <div class="alert alert-danger mt-2" *ngIf="errorMsg">
+                    {{ errorMsg }}
+                </div>
+
+            </form>
         </div>
-         <div class="form-group">
-            
-           <label for="pass" class="form-label">Password</label>
-           <div class="error-message"
-            *ngIf="loginform.controls['Password'].invalid && loginform.controls['Password'].dirty">
-            <span *ngIf="loginform.controls['Password'].errors?.['required']">Field Required</span>
-            <span *ngIf="loginform.controls['Password'].errors?.['pattern']">Invalid password</span>
-           </div>
-           <input type="password" class="form-control" formControlName="Password" id="pass">
-           
-        </div>
-         <div class="form-group">
-           <button type="submit" class="btn btn-primary" [disabled]="loginform.invalid">Login</button>
-        </div>
-    </form>
     </div>
-</div>
 </div>
