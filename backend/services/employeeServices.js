@@ -18,5 +18,15 @@ employeeServices.login=async(email,password,role)=>{
     }
 }
 
+employeeServices.getAllJobs= async()=>{
+    try{
+        jobs= await employeeModel.getAllJobs();
+        return jobs;
+    }
+    catch(error){
+        throw error;
+    }
+}
+
 //Exporting employee services
 module.exports=employeeServices;

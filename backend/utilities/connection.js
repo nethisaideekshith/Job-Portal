@@ -2,6 +2,56 @@ const mongoose = require('mongoose')
 const bcrypt=require('bcrypt');
 require("dotenv").config(); 
 
+//Job Schema
+
+const jobSchema = mongoose.Schema({
+  jobId:{
+    type: String,
+    required:true,
+    unique:true
+  },
+  title:{
+    type: String,
+    required: true
+  },
+  description:{
+    type: String,
+    required: true
+  },
+  location:{
+    type: String,
+    required: true
+  },
+  department:{
+    type: String,
+    required: true
+  },
+  skills:{
+    type: [String]
+  },
+  postedDate:{
+    type: String,
+    default: Date.now
+  },
+  lastDate:{
+    type: String,
+    required: true
+  },
+  updatedAt:{
+    type: String,
+    default: Date.now
+  },
+  isActive:{
+    type: Boolean,
+    default: true
+  },
+  postedBy:{
+    type: String,       // Employee Id
+    required: true
+  }
+})
+
+
 //Employee Schema
 
 const employeeSchema = mongoose.Schema({
@@ -78,6 +128,11 @@ db.connectDb=async ()=>{
 
 db.getEmployees= async ()=>{
   const model=await dbConnection.model("Employee",employeeSchema);
+  return model;
+}
+
+db.getJobs= async ()=>{
+  const model=await dbConnection.model("Job",jobSchema);
   return model;
 }
 

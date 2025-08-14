@@ -2,6 +2,7 @@ const employeeServices = require('../services/employeeServices');
 const adminServices=require('../services/adminServices');
 const hrServices=require('../services/hrServices');
 const Employee= require('../model/employee');
+const Job= require('../model/job');
 const express = require('express');
 const router = express.Router();
 
@@ -26,5 +27,28 @@ router.post('/addEmployee', async (req, res, next)=>{
         next(err);
     }
 })
+
+router.get('/getAllJobs',async (req,res,next)=>{
+    try{
+        const jobs= await employeeServices.getAllJobs();
+        res.json(jobs);
+    }
+    catch(err){
+        next(err);
+    }
+})
+
+router.post('/addJob',async (req,res,next)=>{
+    try{
+        console.log(req.body);
+        const jobObj= new Job(req.body);
+        const job1= await hrServices.addJob(jobObj);
+        res.json(job1);
+    }
+    catch(err){
+        next(err);
+    }
+})
+
 
 module.exports=router;

@@ -66,3 +66,15 @@ Sun Jul 20 2025 - POST - /login
 Sun Jul 20 2025 - POST - /login
 Sun Jul 20 2025 - POST - /login
 Sun Jul 20 2025 - POST - /login
+Thu Aug 14 2025 - GET - /set-up-db
+Thu Aug 14 2025 - GET - /set-up-db
+Thu Aug 14 2025 - GET - /getAllJobs
+Thu Aug 14 2025 - GET - /set-up-db
+Thu Aug 14 2025 - GET - /getAllJobs
+Thu Aug 14 2025 - GET - /addJob
+Thu Aug 14 2025 - POST - /addJob
+Fri Aug 15 2025 - POST - /addJob
+Fri Aug 15 2025 - POST - /addJob
+Fri Aug 15 2025 - POST - /addJob
+Fri Aug 15 2025 - GET - /set-up-db
+Fri Aug 15 2025 - POST - /addJob

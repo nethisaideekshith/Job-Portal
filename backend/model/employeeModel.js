@@ -31,5 +31,21 @@ employeeModel.checkEmployee = async (email, password, role) => {
   }
 };
 
+employeeModel.getAllJobs= async(req,res,next)=>{
+  try{
+    const jobs=await connection.getJobs();
+    const job1=await jobs.find();
+
+    if(!job1){
+      const err = new Error('Jobs not found');
+      err.status = 404;
+      throw err;
+    }
+    return job1;
+  }
+  catch(err){
+    throw err;
+  }
+}
 
 module.exports=employeeModel;
